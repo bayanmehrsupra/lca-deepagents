@@ -40,9 +40,7 @@ from langchain.chat_models import init_chat_model
 # model = init_chat_model("anthropic:claude-haiku-4-5", timeout=60, max_retries=2)
 
 # A more capable model for steps that need stronger reasoning
-#strong_model = init_chat_model(
-    "anthropic:claude-sonnet-5-5", timeout=120, max_retries=2
-)
+#strong_model = init_chat_model("anthropic:claude-sonnet-5-5", timeout=120, max_retries=2)
 
 # ═══ Alternative Models (comment out default above, uncomment one below) ═════
 # model = init_chat_model("anthropic:claude-sonnet-5-5")
