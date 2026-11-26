@@ -52,7 +52,9 @@ from models import model
 #   )
 # ════════════════════════════════════════════════════════════════════════
 
-SYSTEM_PROMPT = "TODO 1: replace this with your own domain-scoping system prompt."
+SYSTEM_PROMPT = """You are a helper who answers questions only about video games.
+This includes general information about video games, their history, and their development.
+If the user asks you about anything else, do not answer under any circumstances and redirect the conversation back to the topic of video games."""
 
 
 agent = create_deep_agent(
@@ -71,7 +73,11 @@ agent = create_deep_agent(
 def run_test_prompts():
     """TODO 2: invoke `agent` with one in-domain prompt and one
     out-of-domain prompt, and print each response."""
-    raise NotImplementedError("TODO 2: see the comment block above")
-
+    good_prompt = "What is the most popular video game available on Steam?"
+    bad_prompt = "What is the most popular board game of all time?"
+    good_response = agent.invoke({"messages": [{"role": "user", "content": good_prompt}]})
+    bad_response = agent.invoke({"messages": [{"role": "user", "content": bad_prompt}]})
+    print(good_response["messages"][-1].text)
+    print(bad_response["messages"][-1].text)
 
 run_test_prompts()

@@ -46,15 +46,15 @@ setGlobalDispatcher(new Agent({ connections: 64 }));
 // ═══ Default Models ══════════════════════════════════════════════════════════
 // Workshop default: Anthropic claude-haiku-4-5, fast and cost-effective.
 // Requires ANTHROPIC_API_KEY in .env
-// export const model = await initChatModel("anthropic:claude-haiku-4-5", { timeout: 60_000, maxRetries: 2 });
+export const model = await initChatModel("anthropic:claude-haiku-4-5", { timeout: 60_000, maxRetries: 2 });
 
 // A more capable model for steps that need stronger reasoning
-// export const strongModel = await initChatModel("anthropic:claude-sonnet-5-5", { timeout: 120_000, maxRetries: 2 });
+export const strongModel = await initChatModel("anthropic:claude-sonnet-5-5", { timeout: 120_000, maxRetries: 2 });
 
 // ═══ Alternative Models (comment out default above, uncomment one below) ═════
 // export const model = await initChatModel("anthropic:claude-sonnet-5-5");
-export const model = await initChatModel("openai:gpt-6-luna", { useResponsesApi: true });
-export const strongModel = await initChatModel("openai:gpt-6.1-sol", { useResponsesApi: true });
+// export const model = await initChatModel("openai:gpt-6-luna", { useResponsesApi: true });
+// export const strongModel = await initChatModel("openai:gpt-6.1-sol", { useResponsesApi: true });
 
 // ═══ Open-Source / Alternative Hosted Models ══════════════════════════════════
 
